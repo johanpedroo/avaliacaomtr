@@ -12,10 +12,10 @@ class BarraPesquisa extends Component {
           </a>
         </div>
         <div className="pesquisa">
-          <form action="">
+          <form action="#" className="form-pesquisa">
             <i className="material-icons">search</i>
             <input type="text" className="campo-pesquisa" placeholder="Digite o produto, marca ou modelo e dá um busca!"/>
-            <button type="submit">BUSCAR</button>
+            <button type="submit" className="btn btn-pesquisa">BUSCAR</button>
           </form>
         </div>
         <div className="perfil">

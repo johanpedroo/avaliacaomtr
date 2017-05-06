@@ -8,7 +8,7 @@ class Breadcrumbs extends Component {
           <a href="#" className="breadcrumbs-links">Início</a>
           {this.props.categorias.map((value, i) => {
             return (
-              <span>
+              <span key={i}>
                 <span className="breadcrumbs-separador">»</span>
                 <a href="#" className="breadcrumbs-links">{value}</a>
               </span>

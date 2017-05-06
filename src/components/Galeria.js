@@ -11,8 +11,8 @@ class Galeria extends Component {
           return {
             indexFoto: translate,
             styleGaleria: {
-              transform: `translate3d(${-272 * translate}px,0,0)`,
-              transitionDuration: `${duration}s`
+            transform: `translate3d(${-272 * translate}px,0,0)`,
+            transitionDuration: `${duration}s`
             }
           }
         })

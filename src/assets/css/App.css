@@ -5,26 +5,84 @@
 *:focus {
   outline: none;
 }
+.btn {
+  background-color: #22b14c;
+  border: 0;
+  height: 48px;
+  float: right;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.btn:hover {
+  background-color: rgba(34,177,76,0.8);
+}
+body {
+  background-color: #fff;
+}
 a {
   text-decoration: none;
   color: #000;
 }
 a.link-azul {
   color: #2189e0;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 a.link-azul:hover {
   text-decoration: underline;
+}
+.verde {
+  color: #22b14c;
+  transition-duration: 0.3s;
+}
+.verde:hover {
+  color: rgba(34,177,76,0.6);
 }
 .container {
   max-width: 1200px;
   min-width: 900px;
   margin: 0 auto;
 }
+form.form-pesquisa {
+  width: 775px;
+  background-color: #fff;
+  border-radius: 3px;
+  height: 48px;
+  margin-top: 4px;
+  position: relative;
+}
+form.form-pesquisa i.material-icons {
+  color: #c3c3c3;
+  font-size: 24pt;
+  padding: 8px 15px;
+}
+form.form-pesquisa input.campo-pesquisa {
+  border: 0;
+  color: #c3c3c3;
+  font-size: 16px;
+  font-family: 'montserrat', Arial, sans-serif;
+  height: 48px;
+  z-index: 3;
+  padding: 0 0 0 61px;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  width: calc(100% - 154px);
+}
+form.form-pesquisa button.btn-pesquisa {
+  width: 92px;
+  border-radius: 0 3px 3px 0;
+}
 header.topo {
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 116px;
   background-color: #ffcd00;
   width: 100%;
+  z-index: 101;
 }
 header.topo .barra-pesquisa {
   height: 85px;
@@ -39,48 +97,6 @@ header.topo .barra-pesquisa .logo {
 }
 header.topo .barra-pesquisa .logo img {
   max-width: 86px;
-}
-header.topo .barra-pesquisa .pesquisa form {
-  width: 775px;
-  background-color: #fff;
-  border-radius: 3px;
-  height: 48px;
-  margin-top: 4px;
-  position: relative;
-}
-header.topo .barra-pesquisa .pesquisa form i.material-icons {
-  color: #c3c3c3;
-  font-size: 24pt;
-  padding: 8px 15px;
-}
-header.topo .barra-pesquisa .pesquisa form input.campo-pesquisa {
-  border: 0;
-  color: #c3c3c3;
-  font-size: 16px;
-  font-family: 'montserrat', Arial, sans-serif;
-  height: 48px;
-  z-index: 3;
-  padding: 0 0 0 61px;
-  background-color: transparent;
-  position: absolute;
-  left: 0;
-  width: calc(100% - 154px);
-}
-header.topo .barra-pesquisa .pesquisa form button {
-  background-color: #22b14c;
-  width: 92px;
-  border: 0;
-  border-radius: 0 3px 3px 0;
-  height: 48px;
-  float: right;
-  color: #fff;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s linear;
-}
-header.topo .barra-pesquisa .pesquisa form button:hover {
-  background-color: rgba(34,177,76,0.8);
 }
 header.topo .barra-pesquisa .perfil {
   width: 200px;
@@ -205,6 +221,7 @@ header.topo .menu nav.categorias ul li a {
   color: #444;
 }
 .breadcrumbs {
+  margin-top: 116px;
   padding: 10px;
   border-bottom: 1px solid #ebebeb;
 }
@@ -224,6 +241,8 @@ header.topo .menu nav.categorias ul li a {
 }
 .produto {
   padding-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
 }
 .produto .galeria {
   width: 25%;
@@ -323,13 +342,14 @@ header.topo .menu nav.categorias ul li a {
 }
 .produto .detalhes .infos span.texto-preco .preco {
   color: #22b14c;
-  padding: 0 0 0 5px;
+  padding: 0 0 0 8px;
 }
 .produto .detalhes .infos span.texto-preco .preco:hover {
   text-decoration: underline;
 }
 .produto .detalhes .infos span.texto-preco .preco .preco-inteiro {
-  font-size: 1.8em;
+  font-size: 1.9em;
+  padding: 0 0 0 5px;
 }
 .produto .detalhes .infos .historico-preco {
   width: 50%;
@@ -389,4 +409,105 @@ header.topo .menu nav.categorias ul li a {
   display: block;
   width: 100%;
   margin-left: 10px;
+}
+.cards {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 50px 0;
+  user-select: none;
+}
+.cards .card {
+  position: relative;
+  width: calc(25% - 24px);
+  background: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.08);
+  height: 400px;
+  margin: 0 13px;
+  padding: 16px 16px 24px;
+}
+.cards .card .card-link {
+  position: relative;
+  width: 100%;
+  height: 238px;
+  display: block;
+  cursor: pointer;
+}
+.cards .card .card-link .card-imagem {
+  width: 100%;
+}
+.cards .card .card-link .card-imagem img {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  margin: 4px auto 18px;
+  display: block;
+}
+.cards .card .card-link .card-descricao {
+  max-height: 50px;
+  color: #757575;
+  font-size: 12px;
+}
+.cards .card .card-link .card-favorito {
+  float: right;
+  z-index: 80;
+  position: absolute;
+  right: 0;
+}
+.cards .card .card-link .card-favorito .coracao.active {
+  fill: #fec53a;
+}
+.cards .card .card-preco {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+  align-items: center;
+}
+.cards .card .card-preco .btn-card-ver {
+  width: 30px;
+  height: 60px;
+  border-radius: 3px;
+  position: relative;
+}
+.cards .card .card-preco .btn-card-ver .icone-flecha {
+  display: inline-block;
+  position: absolute;
+  top: 25px;
+  left: 35%;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #fff;
+  content: "";
+}
+.cards .card .card-preco .card-preco-container {
+  width: calc(100% - 40px);
+  height: 75px;
+}
+.cards .card .card-preco .card-preco-container span,
+.cards .card .card-preco .card-preco-container a {
+  font-size: 11px;
+  display: block;
+}
+.cards .card .card-preco .card-preco-container .card-melhor-preco {
+  margin-bottom: 6px;
+  color: #000;
+}
+.cards .card .card-preco .card-preco-container .card-melhor-preco:hover {
+  color: rgba(195,195,195,0.6);
+}
+.cards .card .card-preco .card-preco-container .card-preco-parcelado {
+  font-size: 18px;
+}
+.cards .card .card-preco .card-preco-container .card-preco-avista {
+  font-size: 13px;
+  margin-bottom: 6px;
 }
