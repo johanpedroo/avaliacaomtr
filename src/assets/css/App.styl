@@ -1,0 +1,205 @@
+*
+  box-sizing border-box
+  font-family 'montserrat',Arial,sans-serif
+*:focus{
+  outline: none;
+}
+
+a
+  text-decoration none
+  color: black
+
+.container
+  max-width 1200px
+  min-width 900px
+  margin 0 auto
+
+header.topo
+  height 116px
+  background-color #ffcd00
+  width 100%
+  .barra-pesquisa
+    height 85px
+    padding-top 15px
+    display flex
+    justify-content space-between
+    .logo
+      width 200px
+      padding-left 10px
+      min-width 100px
+      img
+        max-width 86px
+    .pesquisa
+      form
+        width 775px
+        background-color #fff
+        border-radius 3px
+        height 48px
+        margin-top 4px
+        position relative
+        i.material-icons
+          color #c3c3c3
+          font-size 24pt
+          padding 8px 15px
+        input.campo-pesquisa
+          border 0
+          color #c3c3c3
+          font-size 16px
+          font-family 'montserrat',Arial,sans-serif
+          height 48px
+          z-index 3
+          padding 0 0 0 61px
+          background-color transparent
+          position absolute
+          left 0
+          width calc(100% - 154px)
+        button
+          background-color #22b14c
+          width 92px
+          border 0
+          border-radius 0 3px 3px 0
+          height 48px
+          float right
+          color #fff
+          font-weight bold
+          font-size 14px
+          cursor pointer
+          transition all 0.3s linear
+          &:hover
+            background-color rgba(34,177,76,.8)
+
+
+    .perfil
+      width 200px
+      padding 10px 10px 0 0
+      min-width 65px
+      .perfil-container
+        cursor pointer
+        float right
+        padding 0 6px
+        position relative
+        .avatar
+          float right
+          position relative
+          display block
+          img
+            cursor pointer
+            width 40px
+            height 40px
+            border-radius 20px
+          .icone-avatar
+            width 15px
+            height 17px
+            position absolute
+            bottom 0
+            right -4px
+            z-index 1
+            background url(https://imagebuscape-a.akamaihd.net/material/icons/icoProtegeAtivado.svg) no-repeat left center transparent;
+            visibility visible
+        &:hover
+          .dropdown
+            display block
+            visibility visible
+            opacity 1
+            top 50px
+        .dropdown
+          opacity 0
+          position absolute
+          background-color #fff
+          min-width 216px
+          box-shadow 0 2px 3px 0 rgba(0,0,0,.12)
+          z-index 10
+          top 60px
+          border-radius 3px
+          right 0
+          visibility hidden
+          transition all .3s ease-out
+          &:before
+            position absolute
+            top -6px
+            right 20px
+            display inline-block
+            border-right 10px solid transparent
+            border-bottom 10px solid #ffffff
+            border-left 10px solid transparent
+            content ''
+          ul
+            margin 20px 0
+            padding 0
+            li
+              list-style none
+              line-height 30px
+              &:hover
+                background-color #f2f2f2
+              a
+                display block
+                color #757575
+                padding-left 45px
+                font-size 16px
+                font-weight 300
+                width 100%
+                background url(https://imagebuscape-a.akamaihd.net/material/icons/icoSprite.png?v=1) no-repeat 0 0 transparent
+                &.fav-ico
+                  background-position 17px 7px
+                &.prot-ico
+                  background-position 17px -175px
+                &.comp-ico
+                  background-position 17px -37px
+                &.perf-ico
+                  background-position 17px -83px
+                &.sair-ico
+                  background-position 17px -130px
+                  background-color #f2f2f2
+
+  .menu
+    background-color #ffdc4d
+    height 31px
+    box-shadow 1px 4px 8px -2px rgba(0,0,0,.45)
+    nav
+      &.categorias
+        text-transform uppercase
+        ul
+          margin 0
+          padding 0
+          display flex
+          justify-content space-between
+          li
+            list-style none
+            display inline-block
+            line-height 31px
+            a
+              padding 8px 0
+              font-size 12px
+              text-decoration none
+              color #444
+
+.breadcrumbs
+  padding 10px
+  border-bottom 1px solid #ebebeb
+  span
+  a
+    color: #aaa
+    font-size 11px
+    &.breadcrumbs-links
+      color #000
+    &.breadcrumbs-separador
+      margin 0 5px
+
+.produto
+  padding-top 50px
+  .galeria
+    width 25%
+    height 256px
+    float left
+    position relative
+    .nav-galeria
+      color rgba(0,0,0,.1)
+      font-size 48pt
+      position absolute
+      top 50%
+      cursor pointer
+      &.anterior
+        left 0
+      &.proximo
+        right 0
+
