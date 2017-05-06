@@ -8,6 +8,11 @@
 a
   text-decoration none
   color: black
+  &.link-azul
+    color #2189e0
+    font-size 0.9em
+    &:hover
+      text-decoration underline
 
 .container
   max-width 1200px
@@ -184,22 +189,147 @@ header.topo
       color #000
     &.breadcrumbs-separador
       margin 0 5px
+      font-size 16px
 
 .produto
   padding-top 50px
   .galeria
     width 25%
+    max-width 272px
     height 256px
     float left
     position relative
+    overflow hidden
     .nav-galeria
       color rgba(0,0,0,.1)
       font-size 48pt
       position absolute
-      top 50%
+      top calc(50% - 32px)
       cursor pointer
+      z-index 10
+      user-select none
       &.anterior
         left 0
       &.proximo
         right 0
-
+    .galeria-container
+      height 200px
+      display flex
+      flex-direction row
+      position absolute
+      top 0
+      //left 0
+      //transform translate3d(-272px,0,0)
+      //transition-duration .3s
+      .galeria-item
+        width 272px
+        height 200px
+        margin 0 auto
+        display block
+        .foto
+          margin 0 auto
+          max-height 200px
+          max-width 100%
+          padding 1em 0
+          width auto
+          display block
+    .nav-fotos
+      display flex
+      justify-content center
+      position absolute
+      bottom -10px
+      width 100%
+      height 40px
+      span
+        width 10px
+        height 10px
+        background-color #d8d8d8
+        display block
+        border-radius 50%
+        margin 3px
+        cursor pointer
+        &.active
+          background-color #ffc627
+  .detalhes
+    width 500px
+    display block
+    position relative
+    margin-left 10px
+    text-align left
+    float left
+    h1
+      padding 0
+      margin 0
+      &.nome
+        font-size 1.65em
+        font-weight lighter
+        color #444
+        padding-bottom 0.5em
+    .infos
+      padding 1em 0
+      display inline-block
+      width 100%
+      border-bottom 2px solid #ebebeb
+      span
+        &.texto-preco
+          width 50%
+          color #444
+          font-size 0.9em
+          display block
+          float left
+          position relative
+          .preco
+            color #22b14c
+            padding 0 0 0 5px
+            &:hover
+              text-decoration underline
+            .preco-inteiro
+              font-size 1.8em
+      .historico-preco
+        width 50%
+        display inline-block
+        background url('http://image.buscape.com/material/icons/ic_graph.svg') no-repeat 7px center
+        a
+          padding-left 50px
+          text-align left
+          float left
+          margin-right 30px
+          &:hover
+            text-decoration underline
+    .avaliacao
+      border-bottom 2px solid #ebebeb
+      position relative
+      display block
+      float left
+      padding-bottom 20px
+      .rating
+        float left
+        display block
+        position relative
+        width 50%
+        margin-top 1em
+        span
+          width 32px
+          height 32px
+          background-repeat no-repeat
+          float left
+          margin-right 8px
+          cursor pointer
+          &.estrela
+            background-image url(http://image.buscape.com/material/icons/icon-star-full.svg)
+          &.meia-estrela
+            background-image url(http://image.buscape.com/material/icons/icon-star-half.svg)
+        a
+          margin-top 10px
+          display inline-block
+      .enviar-avaliacao
+        height 70px
+        width 50%
+        float right
+        display block
+        position relative
+        a
+          margin-top 30px
+          display block
+          width 100%
+          margin-left 10px
