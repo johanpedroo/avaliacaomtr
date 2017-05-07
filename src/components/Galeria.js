@@ -20,9 +20,7 @@ class Galeria extends Component {
     };
 
     this.proximo = () => {
-      console.log(this.state.indexFoto);
       if (this.state.indexFoto === this.state.fotosLen + 1) {
-        console.log('hora de trocar ultimo');
 
         this.setTransform(1, 0);
 
@@ -35,9 +33,7 @@ class Galeria extends Component {
     };
 
     this.anterior = () => {
-      console.log(this.state.indexFoto);
       if (this.state.indexFoto === 1) {
-        console.log('hora de trocar pimeiro');
         this.setTransform(6, 0);
         setTimeout(() => {
           this.setTransform(5, .3);
