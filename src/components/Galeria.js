@@ -11,21 +11,18 @@ class Galeria extends Component {
           return {
             indexFoto: translate,
             styleGaleria: {
-            transform: `translate3d(${-272 * translate}px,0,0)`,
-            transitionDuration: `${duration}s`
+              transform: `translate3d(${-272 * translate}px,0,0)`,
+              transitionDuration: `${duration}s`
             }
           }
         })
-
     };
 
     this.proximo = () => {
-      if (this.state.indexFoto === this.state.fotosLen + 1) {
-
-        this.setTransform(1, 0);
-
+      if (this.state.indexFoto === this.state.fotosLen) {
+        this.setTransform(0, 0);
         setTimeout(() => {
-          this.setTransform(2, .3);
+          this.setTransform(1, .3);
         }, 10)
       } else {
         this.setTransform(this.state.indexFoto + 1, .3)
@@ -69,12 +66,11 @@ class Galeria extends Component {
   componentWillMount() {
     let fotos = [];
     const fotosLen = this.props.fotos.length;
-    fotos.push(this.props.fotos[fotosLen-1]);
 
+    fotos.push(this.props.fotos[fotosLen-1]);
     for(let foto of this.props.fotos){
       fotos.push(foto)
     }
-
     fotos.push(this.props.fotos[0]);
     this.setState({
       fotos,
