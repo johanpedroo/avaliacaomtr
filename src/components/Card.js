@@ -4,6 +4,12 @@ import React, { Component } from 'react';
 class Card extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      favorito: false,
+      openTooltip: false
+    };
+
     this.favorito = () => {
       this.setState((prev) => {
         return {
@@ -12,7 +18,7 @@ class Card extends Component {
         }
       });
       setTimeout(() => {
-        this.setState((prev) => {
+        this.setState(() => {
           return {
             openTooltip: false
           }
@@ -55,12 +61,6 @@ class Card extends Component {
     );
   }
 
-  componentWillMount() {
-    this.setState({
-      favorito: false,
-      openTooltip: false
-    });
-  }
 }
 
 export default Card;

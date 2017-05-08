@@ -3,9 +3,25 @@ import React, { Component } from 'react';
 class Galeria extends Component {
   constructor(props) {
     super(props);
+
+    let fotos = [];
+    const fotosLen = this.props.fotos.length;
+
+    fotos.push(this.props.fotos[fotosLen-1]);
+    for(let foto of this.props.fotos){
+      fotos.push(foto)
+    }
+    fotos.push(this.props.fotos[0]);
     this.state = {
-      indexFoto: 1
+      fotos,
+      indexFoto: 1,
+      fotosLen,
+      styleGaleria: {
+        transform: "translate3d(-272px,0,0)",
+        transitionDuration: ".3s"
+      }
     };
+
     this.setTransform = (translate, duration = .3) => {
         this.setState(() => {
           return {
@@ -17,7 +33,6 @@ class Galeria extends Component {
           }
         })
     };
-
     this.proximo = () => {
       if (this.state.indexFoto === this.state.fotosLen) {
         this.setTransform(0, 0);
@@ -63,25 +78,6 @@ class Galeria extends Component {
     );
   }
 
-  componentWillMount() {
-    let fotos = [];
-    const fotosLen = this.props.fotos.length;
-
-    fotos.push(this.props.fotos[fotosLen-1]);
-    for(let foto of this.props.fotos){
-      fotos.push(foto)
-    }
-    fotos.push(this.props.fotos[0]);
-    this.setState({
-      fotos,
-      indexFoto: 1,
-      fotosLen,
-      styleGaleria: {
-        transform: "translate3d(-272px,0,0)",
-        transitionDuration: ".3s"
-      }
-    });
-  }
 }
 
 export default Galeria;
